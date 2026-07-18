@@ -1,3 +1,21 @@
-<app-navbar></app-navbar>
+<div class="app-layout">
 
-<app-login></app-login>
+  <app-sidebar [class.open]="sidebarOpen"></app-sidebar>
+
+  <div
+    class="overlay"
+    *ngIf="sidebarOpen"
+    (click)="toggleSidebar()">
+  </div>
+
+  <div class="main-content">
+
+    <app-navbar
+      (menuClicked)="toggleSidebar()">
+    </app-navbar>
+
+    <app-hospital></app-hospital>
+
+  </div>
+
+</div>

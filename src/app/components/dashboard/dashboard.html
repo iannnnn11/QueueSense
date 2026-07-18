@@ -11,41 +11,42 @@
     <div class="col-md-4">
       <app-queue-card
         name="Medical"
-        [waiting]="20">
+        [waiting]="hospitalWaiting" (joinClicked)="joinHospitalQueue()">
+        
       </app-queue-card>
     </div>
   
     <div class="col-md-4">
       <app-queue-card
         name="Movie Ticket"
-        [waiting]="20">
+        [waiting]="hospitalWaiting" (joinClicked)="joinHospitalQueue()">
       </app-queue-card>
     </div>
   
     <div class="col-md-4">
       <app-queue-card
         name="Food"
-        [waiting]="20">
+        [waiting]="20" (joinClicked)="joinHospitalQueue()">
       </app-queue-card>
     </div>
 
     <div class="col-md-4">
       <app-queue-card
         name="Bank"
-        [waiting]="10">
+        [waiting]="hospitalWaiting" (joinClicked)="joinHospitalQueue()">
       </app-queue-card>
     </div>
 
     <div class="col-md-4">
       <app-queue-card
         name="College"
-        [waiting]="12">
+        [waiting]="12" (joinClicked)="joinHospitalQueue()">
       </app-queue-card>
     </div>
     <div class="col-md-4">
       <app-queue-card
         name="Vehicle"
-        [waiting]="12">
+        [waiting]="12" (joinClicked)="joinHospitalQueue()">
       </app-queue-card>
     </div>
   </div>

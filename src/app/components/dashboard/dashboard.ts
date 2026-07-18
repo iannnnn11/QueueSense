@@ -9,4 +9,9 @@ import { QueueCard } from '../queue-card/queue-card';
 })
 export class Dashboard {
 
+  hospitalWaiting = 20;
+
+  joinHospitalQueue() {
+    this.hospitalWaiting++;
+  }
 }
