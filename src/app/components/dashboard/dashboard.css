@@ -1,0 +1,299 @@
+/* Main dashboard area */
+:host {
+  display: block;
+  min-height: 100vh;
+  background: #f4f7fb;
+}
+
+.container-fluid {
+  max-width: 1500px;
+}
+
+
+/* =========================
+   HERO SECTION
+========================= */
+
+.hero-card {
+  color: white;
+  overflow: hidden;
+  position: relative;
+  border-radius: 24px;
+  background:
+    linear-gradient(
+      135deg,
+      rgba(37, 99, 235, 0.96),
+      rgba(79, 70, 229, 0.92)
+    );
+}
+
+.hero-card::before {
+  content: "";
+  position: absolute;
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  top: -120px;
+  right: -60px;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.hero-card::after {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  bottom: -80px;
+  right: 180px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.hero-card .card-body {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-card .text-secondary {
+  color: rgba(255, 255, 255, 0.78) !important;
+}
+
+.hero-card .input-group {
+  max-width: 600px;
+}
+
+.hero-card .input-group-text {
+  border: none;
+  background: white;
+  color: #2563eb;
+  padding-left: 18px;
+  padding-right: 18px;
+}
+
+.hero-card .form-control {
+  min-height: 52px;
+  border: none;
+  box-shadow: none;
+}
+
+
+/* =========================
+   STATISTIC CARDS
+========================= */
+
+.stat-card {
+  border-radius: 18px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.13) !important;
+}
+
+.stat-card h6 {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+.stat-card h2 {
+  margin-bottom: 0;
+  color: #172033;
+}
+
+.icon-circle {
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 16px;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
+}
+
+
+/* =========================
+   CATEGORY CARDS
+========================= */
+
+.category-card {
+  min-height: 145px;
+  cursor: pointer;
+  border-radius: 18px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    background-color 0.3s ease;
+}
+
+.category-card .card-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-card i {
+  transition: transform 0.3s ease;
+}
+
+.category-card h6 {
+  margin-bottom: 0;
+  color: #263149;
+  font-weight: 600;
+}
+
+.category-card:hover {
+  transform: translateY(-8px);
+  background: #f8faff;
+  box-shadow: 0 18px 38px rgba(37, 99, 235, 0.14) !important;
+}
+
+.category-card:hover i {
+  transform: scale(1.12) rotate(-4deg);
+}
+
+
+/* =========================
+   QUEUE CARDS
+========================= */
+
+.queue-card {
+  height: 100%;
+  overflow: hidden;
+  border-radius: 20px;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.queue-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 20px 42px rgba(15, 23, 42, 0.14) !important;
+}
+
+.queue-card .card-body {
+  padding: 24px;
+}
+
+.queue-card h4 {
+  margin-bottom: 4px;
+  color: #172033;
+  font-weight: 700;
+}
+
+.queue-card .badge {
+  height: fit-content;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 0.78rem;
+}
+
+.queue-card .progress {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 20px;
+  background: #e8edf5;
+}
+
+.queue-card .progress-bar {
+  border-radius: 20px;
+  transition: width 0.8s ease;
+}
+
+.queue-card small {
+  color: #68758c;
+}
+
+.queue-card .btn {
+  min-height: 46px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.queue-card .btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 22px rgba(37, 99, 235, 0.26);
+}
+
+
+/* =========================
+   SECTION HEADINGS
+========================= */
+
+h3 {
+  color: #172033;
+}
+
+h3::after {
+  content: "";
+  display: block;
+  width: 48px;
+  height: 4px;
+  margin-top: 8px;
+  border-radius: 20px;
+  background: #2563eb;
+}
+
+
+/* =========================
+   PAGE ANIMATION
+========================= */
+
+.hero-card,
+.stat-card,
+.category-card,
+.queue-card {
+  animation: fadeUp 0.65s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+@media (max-width: 767px) {
+  .container-fluid {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .hero-card .card-body {
+    padding: 30px 22px !important;
+  }
+
+  .hero-card h2 {
+    font-size: 1.7rem;
+  }
+
+  .hero-card .input-group {
+    width: 100% !important;
+  }
+
+  .category-card {
+    min-height: 125px;
+  }
+
+  .queue-card .card-body {
+    padding: 20px;
+  }
+}
