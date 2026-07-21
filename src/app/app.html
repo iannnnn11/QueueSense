@@ -1,7 +1,12 @@
 <div class="app-layout">
 
-  <app-sidebar [class.open]="sidebarOpen"></app-sidebar>
+  <!-- Sidebar appears only once -->
+  <app-sidebar
+    [class.open]="sidebarOpen"
+    (close)="toggleSidebar()">
+  </app-sidebar>
 
+  <!-- Dark overlay for mobile sidebar -->
   <div
     class="overlay"
     *ngIf="sidebarOpen"
@@ -13,12 +18,9 @@
     <app-navbar
       (menuClicked)="toggleSidebar()">
     </app-navbar>
-    <app-sidebar
-  [class.open]="sidebarOpen"
-  (close)="toggleSidebar()">
-</app-sidebar>
 
-    <app-hospital></app-hospital>
+    <!-- Routed page components appear here -->
+    <router-outlet></router-outlet>
 
   </div>
 
