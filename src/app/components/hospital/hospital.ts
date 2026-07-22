@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { NgForOf } from "../../../../node_modules/@angular/common/types/_common_module-chunk";
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-hospital',
-  imports: [CommonModule],
+  imports: [CommonModule,RouterLink],
   templateUrl: './hospital.html',
   styleUrl: './hospital.css',
 })

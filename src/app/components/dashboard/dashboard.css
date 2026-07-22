@@ -1,4 +1,4 @@
-/* Main dashboard area */
+
 :host {
   display: block;
   min-height: 100vh;
@@ -9,10 +9,6 @@
   max-width: 1500px;
 }
 
-
-/* =========================
-   HERO SECTION
-========================= */
 
 .hero-card {
   color: white;
@@ -25,28 +21,6 @@
       rgba(37, 99, 235, 0.96),
       rgba(79, 70, 229, 0.92)
     );
-}
-
-.hero-card::before {
-  content: "";
-  position: absolute;
-  width: 260px;
-  height: 260px;
-  border-radius: 50%;
-  top: -120px;
-  right: -60px;
-  background: rgba(255, 255, 255, 0.12);
-}
-
-.hero-card::after {
-  content: "";
-  position: absolute;
-  width: 160px;
-  height: 160px;
-  border-radius: 50%;
-  bottom: -80px;
-  right: 180px;
-  background: rgba(255, 255, 255, 0.08);
 }
 
 .hero-card .card-body {
@@ -69,18 +43,6 @@
   padding-left: 18px;
   padding-right: 18px;
 }
-
-.hero-card .form-control {
-  min-height: 52px;
-  border: none;
-  box-shadow: none;
-}
-
-
-/* =========================
-   STATISTIC CARDS
-========================= */
-
 .stat-card {
   border-radius: 18px;
   transition:
@@ -102,22 +64,6 @@
   margin-bottom: 0;
   color: #172033;
 }
-
-.icon-circle {
-  width: 58px;
-  height: 58px;
-  flex-shrink: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 16px;
-  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
-}
-
-
-/* =========================
-   CATEGORY CARDS
-========================= */
 
 .category-card {
   min-height: 145px;
@@ -155,11 +101,6 @@
 .category-card:hover i {
   transform: scale(1.12) rotate(-4deg);
 }
-
-
-/* =========================
-   QUEUE CARDS
-========================= */
 
 .queue-card {
   height: 100%;
@@ -223,59 +164,9 @@
   box-shadow: 0 10px 22px rgba(37, 99, 235, 0.26);
 }
 
-
-/* =========================
-   SECTION HEADINGS
-========================= */
-
 h3 {
   color: #172033;
 }
-
-h3::after {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 4px;
-  margin-top: 8px;
-  border-radius: 20px;
-  background: #2563eb;
-}
-
-
-/* =========================
-   PAGE ANIMATION
-========================= */
-
-.hero-card,
-.stat-card,
-.category-card,
-.queue-card {
-  animation: fadeUp 0.65s ease both;
-}
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(18px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* =========================
-   RESPONSIVE DESIGN
-========================= */
-
-@media (max-width: 767px) {
-  .container-fluid {
-    padding-left: 14px;
-    padding-right: 14px;
-  }
 
   .hero-card .card-body {
     padding: 30px 22px !important;
@@ -296,4 +187,3 @@ h3::after {
   .queue-card .card-body {
     padding: 20px;
   }
-}
