@@ -53,8 +53,6 @@ export class Queue {
       image: 'images/aimms.jpeg',
     }
 
-    // 👉 Paste the remaining hospitals here
-    // (id 6 to id 18)
 
   ];
 
@@ -75,14 +73,14 @@ export class Queue {
 
   }
 
-  get estimatedTime(): number {
-    return this.selectedHospital
-      ? this.selectedHospital.waiting * 5
-      : 0;
-  }
+    get estimatedTime(): number {
+      return this.selectedHospital
+        ? this.selectedHospital.waiting * 5
+        : 0;
+    }
 
-  goBack(): void {
-    this.location.back();
-  }
+    goBack(): void {
+      this.location.back();
+    }
 
 }
