@@ -1,34 +1,56 @@
-<div class="queue-page py-5">
+<div class="queue-page py-5" *ngIf="selectedHospital">
+
   <div class="container">
+
+    <!-- Hospital Header -->
     <div class="card hospital-header border-0 shadow-sm mb-4">
+
       <div class="card-body p-4">
+
         <div class="row align-items-center g-4">
+
           <div class="col-md-8">
+
             <div class="d-flex align-items-start gap-3">
+
               <div class="hospital-icon">
+
                 <i class="fa-solid fa-hospital"></i>
+
               </div>
+
               <div>
+
                 <div class="d-flex align-items-center gap-2 mb-2">
 
                   <h2 class="fw-bold mb-0">
-                    Ruby Hall Clinic
+
+                    {{ selectedHospital.name }}
+
                   </h2>
 
                   <span class="badge bg-success">
+
                     Open
+
                   </span>
 
                 </div>
 
                 <p class="text-secondary mb-2">
+
                   <i class="fa-solid fa-location-dot me-2"></i>
-                  Pune, Maharashtra
+
+                  {{ selectedHospital.location }}
+
                 </p>
 
                 <p class="text-secondary mb-0">
+
                   <i class="fa-solid fa-clock me-2"></i>
+
                   Open until 10:00 PM
+
                 </p>
 
               </div>
@@ -40,13 +62,13 @@
           <div class="col-md-4 text-md-end">
 
             <button
-              type="button"
-              class="btn btn-outline-primary">
-
-              <i class="fa-solid fa-arrow-left me-2"></i>
-              Back
-
-            </button>
+  type="button"
+  class="btn btn-outline-primary"
+  (click)="goBack()"
+>
+  <i class="fa-solid fa-arrow-left me-2"></i>
+  Back
+</button>
 
           </div>
 
@@ -57,9 +79,10 @@
     </div>
 
 
-    <!-- Main statistics -->
+    <!-- Main Statistics -->
     <div class="row g-4 mb-4">
 
+      <!-- Current Token -->
       <div class="col-md-4">
 
         <div class="card queue-stat-card border-0 shadow-sm h-100">
@@ -67,15 +90,21 @@
           <div class="card-body p-4 text-center">
 
             <div class="stat-icon bg-primary-subtle text-primary">
+
               <i class="fa-solid fa-ticket"></i>
+
             </div>
 
             <p class="text-secondary mb-2">
+
               Current Token
+
             </p>
 
             <h2 class="fw-bold mb-0">
+
               A-108
+
             </h2>
 
           </div>
@@ -85,6 +114,7 @@
       </div>
 
 
+      <!-- People Waiting -->
       <div class="col-md-4">
 
         <div class="card queue-stat-card border-0 shadow-sm h-100">
@@ -92,15 +122,21 @@
           <div class="card-body p-4 text-center">
 
             <div class="stat-icon bg-warning-subtle text-warning">
+
               <i class="fa-solid fa-users"></i>
+
             </div>
 
             <p class="text-secondary mb-2">
+
               People Waiting
+
             </p>
 
             <h2 class="fw-bold mb-0">
-              18
+
+              {{ selectedHospital.waiting }}
+
             </h2>
 
           </div>
@@ -110,6 +146,7 @@
       </div>
 
 
+      <!-- Estimated Waiting -->
       <div class="col-md-4">
 
         <div class="card queue-stat-card border-0 shadow-sm h-100">
@@ -117,15 +154,21 @@
           <div class="card-body p-4 text-center">
 
             <div class="stat-icon bg-success-subtle text-success">
+
               <i class="fa-solid fa-hourglass-half"></i>
+
             </div>
 
             <p class="text-secondary mb-2">
+
               Estimated Waiting
+
             </p>
 
             <h2 class="fw-bold mb-0">
-              25 mins
+
+              {{ estimatedTime }} mins
+
             </h2>
 
           </div>
@@ -137,9 +180,10 @@
     </div>
 
 
+    <!-- Main Content -->
     <div class="row g-4">
 
-      <!-- Live queue section -->
+      <!-- Live Queue Section -->
       <div class="col-lg-8">
 
         <div class="card live-queue-card border-0 shadow-sm h-100">
@@ -151,18 +195,25 @@
               <div>
 
                 <h4 class="fw-bold mb-1">
+
                   Live Queue
+
                 </h4>
 
                 <p class="text-secondary mb-0">
+
                   Queue updates automatically
+
                 </p>
 
               </div>
 
               <span class="live-status">
+
                 <span class="live-dot"></span>
+
                 Live
+
               </span>
 
             </div>
@@ -171,15 +222,21 @@
             <div class="queue-display text-center mb-4">
 
               <p class="text-secondary mb-2">
+
                 Now Serving
+
               </p>
 
               <h1 class="current-token fw-bold">
+
                 A-108
+
               </h1>
 
               <p class="text-secondary mb-0">
+
                 Counter Number 3
+
               </p>
 
             </div>
@@ -190,11 +247,15 @@
               <div class="d-flex justify-content-between mb-2">
 
                 <span class="fw-semibold">
+
                   Queue Progress
+
                 </span>
 
                 <span class="text-secondary">
+
                   65%
+
                 </span>
 
               </div>
@@ -203,8 +264,8 @@
 
                 <div
                   class="progress-bar"
-                  style="width: 65%">
-
+                  style="width: 65%"
+                >
                 </div>
 
               </div>
@@ -219,11 +280,15 @@
                 <div class="queue-info-box">
 
                   <span class="queue-info-label">
+
                     Average service time
+
                   </span>
 
                   <strong>
+
                     5 minutes
+
                   </strong>
 
                 </div>
@@ -236,11 +301,15 @@
                 <div class="queue-info-box">
 
                   <span class="queue-info-label">
+
                     Active counters
+
                   </span>
 
                   <strong>
+
                     3 counters
+
                   </strong>
 
                 </div>
@@ -256,7 +325,7 @@
       </div>
 
 
-      <!-- Join queue section -->
+      <!-- Join Queue Section -->
       <div class="col-lg-4">
 
         <div class="card join-card border-0 shadow-sm">
@@ -264,11 +333,15 @@
           <div class="card-body p-4">
 
             <h4 class="fw-bold mb-2">
+
               Join this Queue
+
             </h4>
 
             <p class="text-secondary mb-4">
+
               Get your digital token and track the queue live.
+
             </p>
 
 
@@ -277,35 +350,49 @@
               <div class="d-flex justify-content-between mb-3">
 
                 <span class="text-secondary">
+
                   Your expected token
+
                 </span>
 
                 <strong>
-                  A-127
+
+                  A-{{ 108 + selectedHospital.waiting + 1 }}
+
                 </strong>
 
               </div>
+
 
               <div class="d-flex justify-content-between mb-3">
 
                 <span class="text-secondary">
+
                   People ahead
+
                 </span>
 
                 <strong>
-                  18
+
+                  {{ selectedHospital.waiting }}
+
                 </strong>
 
               </div>
 
+
               <div class="d-flex justify-content-between">
 
                 <span class="text-secondary">
+
                   Estimated time
+
                 </span>
 
                 <strong>
-                  25 mins
+
+                  {{ estimatedTime }} mins
+
                 </strong>
 
               </div>
@@ -315,9 +402,11 @@
 
             <button
               type="button"
-              class="btn btn-primary w-100 py-3">
+              class="btn btn-primary w-100 py-3"
+            >
 
               <i class="fa-solid fa-ticket me-2"></i>
+
               Join Queue
 
             </button>
@@ -325,9 +414,11 @@
 
             <button
               type="button"
-              class="btn btn-secondary w-100 mt-3">
+              class="btn btn-secondary w-100 mt-3"
+            >
 
               <i class="fa-regular fa-bell me-2"></i>
+
               Notify Me Later
 
             </button>
@@ -337,12 +428,15 @@
         </div>
 
 
+        <!-- Queue Guidelines -->
         <div class="card border-0 shadow-sm mt-4">
 
           <div class="card-body p-4">
 
             <h5 class="fw-bold mb-3">
+
               Queue Guidelines
+
             </h5>
 
             <div class="guideline-item">
@@ -350,7 +444,9 @@
               <i class="fa-solid fa-circle-check"></i>
 
               <span>
+
                 Arrive before your token is called.
+
               </span>
 
             </div>
@@ -360,7 +456,9 @@
               <i class="fa-solid fa-circle-check"></i>
 
               <span>
+
                 Keep your token number ready.
+
               </span>
 
             </div>
@@ -370,7 +468,9 @@
               <i class="fa-solid fa-circle-check"></i>
 
               <span>
+
                 You can leave the queue anytime.
+
               </span>
 
             </div>
@@ -384,5 +484,35 @@
     </div>
 
   </div>
+
+</div>
+
+
+<!-- Invalid hospital ID -->
+<div
+  class="container py-5 text-center"
+  *ngIf="!selectedHospital"
+>
+
+  <h2 class="fw-bold">
+
+    Hospital not found
+
+  </h2>
+
+  <p class="text-secondary">
+
+    The selected hospital does not exist.
+
+  </p>
+
+  <button
+  type="button"
+  class="btn btn-outline-primary"
+  (click)="goBack()"
+>
+  <i class="fa-solid fa-arrow-left me-2"></i>
+  Back
+</button>
 
 </div>

@@ -3,6 +3,7 @@ import { Dashboard } from './components/dashboard/dashboard';
 import { Hospital } from './components/hospital/hospital';
 import { Queue } from './pages/queue/queue';
 import { Cinema } from './components/cinema/cinema';
+import { Error } from './error/error';
 
 export const routes: Routes = [
   {
@@ -23,7 +24,10 @@ export const routes: Routes = [
     component: Cinema
   },
   {
-    path: 'queue',
+    path: 'queue/:id',
     component: Queue
-  }
+  },
+  { 
+    path: '**',
+    component: Error }
 ];
